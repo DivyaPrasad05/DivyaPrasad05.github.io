@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'AlegreyaRegular';
+    src: url(fonts/Alegreya-Regular.ttf);
+}
+@font-face {
+    font-family: 'JustMeAgainDownHere';
+    src: url(fonts/JustMeAgainDownHere-Regular.ttf);
+}
+
+body{
+    background-color: #FFFCFC;
+}
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+nav{
+    background: #FFFCFC;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color:black;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-family: 'JustMeAgainDownHere';
+    font-weight: bold;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    color: black;
+    font-size: 17px;
+    font-family: 'AlegreyaRegular';
+    padding: 5px 40px;
+    flex-shrink: 1;
+    border: 4px solid #8B8B8B;
+    border-radius: 59px;
+    background-color: #B3B3B3;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.2s;
+
+}
+nav ul a.active{
+    border: 4px solid #A45C40;
+    background: #FF7F50;
+}
+
+nav ul li a:hover{
+    background: #FFFCFC;
+}
+
+nav ul li a.active:hover{
+    background: #FFFCFC;
+}
+
+h1{
+    font-family: 'AlegreyaRegular';
+    font-size: 69px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+/*
+ul{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+li{
+    font-family: 'JustMeAgainDownHere';
+    font-size: 20px;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: black;
+}
+*/
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wrapper .static-text{
+    display: inline-block;
+    color: black;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'AlegreyaRegular';
+    vertical-align: middle;
+}
+
+.wrapper .dynamic-text{
+    display: inline-block;
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    background: #FFFCFC;
+    overflow: hidden; 
+    vertical-align: middle;
+}
+
+.dynamic-text li{
+    list-style: none;
+    color: black;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: 'AlegreyaRegular';
+    position: relative;
+    top: 0;
+    animation: slide 14s steps(4) infinite;
+}
+
+@keyframes slide{
+    100%{
+        top: -360px;
+    }
+}
+
+.dynamic-text li span{
+    position: relative;
+}
+
+.dynamic-text li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 110%;
+    width: 110%;
+    background: #FFFCFC;
+    border-left: 2px solid black;
+    animation: typing 3.5s steps(10) infinite;
+}
+
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -80px 0 80px;
+    }
+}
+
+/* Headers */
+h2{
+    font-family: 'AlegreyaRegular';
+    font-size: 40px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color: black;
+}
+
+p{
+    font-family: 'AlegreyaRegular';
+    font-size: 20px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color: black;
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .container{
+    margin: 100px
+}
+
+section h2{
+    font-size: 40;
+    text-align: center;
+}
+section .containerMe {
+    display: flex;
+    align-items: center;
+  }
+section .textContainer{
+    flex: 1;
+    padding-right: 20px;
+}
+
+section .headshotContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    
+}
+
+section .contentMe{
+    display: flex;
+}
+
+section .cards{
+    display: flex;
+}
+
+section .cards .text-card{
+    flex: 1;
+    background: #D9D9D9;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+section .cards .text-card .inner-rectangle{
+    background: white;
+    border-radius: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+section .cards .text-card h3{
+    font-size: 30px;
+    font-family: 'AlegreyaRegular';
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#About\ Me img{
+    width: 400px;
+    height: auto;
+    border-radius: 40px;
+}
+
+
+.photography{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px; 
+}
+#Photography img{
+    width: 400px;
+    height: auto;
+    border-radius: 40px;
+}
+
+@media (max-width: 900px){
+    section .cards{
+        flex-direction: column;
+    }
+}
+
