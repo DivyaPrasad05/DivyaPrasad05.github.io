@@ -254,7 +254,7 @@ section .cards .text-card h3{
     border-radius: 40px;
 }
 
-
+/*
 .photography{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -265,6 +265,7 @@ section .cards .text-card h3{
     height: auto;
     border-radius: 40px;
 }
+*/
 
 @media (max-width: 900px){
     section .cards{
