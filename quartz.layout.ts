@@ -91,6 +91,7 @@ Component.Explorer({
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
+  header:[ Component.PageTitle(), Component.Search(), Component.Darkmode(), Component.Explorer()],
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
