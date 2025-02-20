@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "Divya Prasad",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -54,6 +54,7 @@ const config: QuartzConfig = {
       },
     },
   },
+
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
@@ -91,5 +92,7 @@ const config: QuartzConfig = {
     ],
   },
 }
+
+
 
 export default config
