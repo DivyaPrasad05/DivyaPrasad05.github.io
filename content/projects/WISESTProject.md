@@ -1,5 +1,8 @@
 ---
 title: WISEST Project
+aliases:
+  - here
+  - website interface
 ---
 
 This was my intern project that I completed as part of the [WISEST Summer Research Program](https://www.ualberta.ca/en/women-in-scholarship-engineering-science-technology/programs/summer-research-program/index.html).

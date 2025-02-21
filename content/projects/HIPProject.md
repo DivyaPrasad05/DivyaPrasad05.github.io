@@ -1,5 +1,8 @@
 ---
 title: HIP Project
+aliases:
+  - here
+  - gamify
 ---
 
 This was my intern project for when I did the High School Internship Program (HIP). 
