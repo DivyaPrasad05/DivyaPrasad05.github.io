@@ -1,7 +1,6 @@
 ---
 title: Hey! 👋 I'm Divya
 ---
-
 I am a maker at heart! 🛠👩‍💻 I am from [Edmonton, Alberta](https://en.wikipedia.org/wiki/Edmonton) and I am currently a student at the [University of Alberta](https://www.ualberta.ca/en/index.html) majoring in computing science. Currently I am:
 
 - Learning new tools and exploring new projects
@@ -15,5 +14,9 @@ In the past, I:
 - Attempted to [[HIPProject|gamify]] drinking water with reinforcement learning as a summer intern when I was 17
 - Built a [[WISESTProject|website interface]] to store predictive text models build to help Plains Cree Users
 
-Thanks for stopping by!
+Check out my [[projects]]!
 
+Check out my [[experiences]]!
+
+
+Thanks for stopping by!

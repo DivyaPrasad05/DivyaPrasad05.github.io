@@ -8,11 +8,29 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/DivyaPrasad05",
+      "LinkedIn": "https://www.linkedin.com/in/divya-prasad11/",
     },
   }),
 }
+Component.Explorer({
+  title: "Explorer", // title of the explorer component
+  folderClickBehavior: "collapse", // what happens when you click a folder ("link" to navigate to folder page on click or "collapse" to collapse folder on click)
+  folderDefaultState: "collapsed", // default state of folders ("collapsed" or "open")
+  useSavedState: true, // whether to use local storage to save "state" (which folders are opened) of explorer
+  filterFn: (node) => {
+    // set containing names of everything you want to filter out
+    const omit = new Set(["CNRL", "WISEST", "HIP"])
+    return !omit.has(node.name.toLowerCase())
+  },
+  mapFn: (node) => {
+    node.displayName = node.displayName.toUpperCase()
+    return node;
+  },
+  // what order to apply functions in
+  order: ["filter", "map"],
+});
+
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
@@ -20,7 +38,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
   ],
   beforeBody: [
     Component.Breadcrumbs(),
@@ -29,13 +46,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    
-    Component.MobileOnly(Component.Spacer()),
   ],
   right: [
-    Component.Graph(),
+    
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+  ],
+  afterBody: [
+    Component.Graph(),
   ],
 }
 
@@ -70,35 +88,13 @@ Component.Graph({
   },
 })
 
-// Sort order: folders first, then files. Sort folders and files alphabetically
-Component.Explorer({
-  sortFn: (a, b) => {
-    if ((!a.file && !b.file) || (a.file && b.file)) {
-      // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
-      // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
-      return a.displayName.localeCompare(b.displayName, undefined, {
-        numeric: true,
-        sensitivity: "base",
-      })
-    }
-    if (a.file && !b.file) {
-      return 1
-    } else {
-      return -1
-    }
-  },
-})
+
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  header:[ Component.PageTitle(), Component.Search(), Component.Darkmode(), Component.Explorer()],
+  header:[ Component.PageTitle(), Component.Search(), Component.Darkmode()],
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.Explorer(),
-  ],
+  left: [],
   right: [],
+  afterBody:[Component.Graph()]
 }
